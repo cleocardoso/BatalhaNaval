@@ -9,19 +9,6 @@ import play.mvc.Controller;
 
 @Entity
 public class Usuarios extends Controller{
-	@Required
-	String nome;
 	
-	@Required
-	String email;
-	
-	@Required
-	String senha;
-	
-	@Temporal(TemporalType.DATE)
-	String dateAtual;
-	
-	@Required
-	int pontucao;
 	
 }
