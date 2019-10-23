@@ -5,7 +5,7 @@ body {
     /*
     "@{'/public/LoginCss/login.css'}" 
     */
-    background-image: url('/public/images/log1.jpg');
+    background-image: url('/public/images/01.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
