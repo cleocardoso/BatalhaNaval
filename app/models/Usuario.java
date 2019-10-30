@@ -1,5 +1,9 @@
 package models;
 
+import javax.persistence.Entity;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 import javax.persistence.TemporalType;
@@ -8,6 +12,7 @@ import play.data.validation.Email;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
+@Entity
 public class Usuario extends Model{
 	@Required
 	public String nome;
@@ -17,13 +22,13 @@ public class Usuario extends Model{
 	public String email;
 	
 	@Required
-	public String senha;
+	public String senha;	
 	
-	@Temporal(TemporalType.DATE)
-	public String dateAtual;
-	
-	@Required
-	public int pontucao;
+		
+	@OneToOne
+	@JoinColumn(name = "conta_id")
+	public Conta conta;
+
 
 	public boolean isUnico() {
 		Usuario u = Usuario.find("email", email).first();
