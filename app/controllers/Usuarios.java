@@ -91,7 +91,7 @@ public class Usuarios extends Controller{
 		
 	}
 	
-	public static void listarUsuario(Usuario usuario){
+	public static void listagem(Usuario usuario){
 		List<Usuario> usaurios = Usuario.findAll();
 		render(usuario);
 	}
