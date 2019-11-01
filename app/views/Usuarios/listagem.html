@@ -1,12 +1,12 @@
 #{extends 'main.html' /}
-#{set title:'Listar Usuarios' /}
+#{set title:'Jogadores' /}
 
 <meta charset="UTF-8"/>
 
 
- <div class="card card-register mx-auto mt-5">
+ <!--<div class="card card-register mx-auto mt-8">
  
-        <div class="card-header">Lista de Usuarios </div>
+        <div class="card-header">Jogdores </div>
         <div class="card-body">
       
          <table class="table dataTable" id="dataTable">
@@ -29,56 +29,63 @@
 	</tbody>
     </table>       
       <div class="row">
-		<div class="form-group col-md-3">
-			<a href="@{Usuarios.cadastrousuario}" class="btn btn-success btn-block">Novo Cliente</a>
+		<div class="form-group col-md-6">
+			<a href="@{Usuarios.cadastrousuario}" class="btn btn-success btn-block">Novo Usuario</a>
 		</div>
 
-		<div class="form-group col-md-3">
+		<div class="form-group col-md-5">
 			<a href="@{Application.index}" class="btn btn-danger btn-block">Sair</a>
 		</div>
 	</div>  
         
  </div>
- </div>       
-
-
- <!-- <div class="card card-register mx-auto mt-5">
-
-<meta charset="UTF-8"/>
- <div class="card-header">
-   <i class="fa fa-table"></i> Lista Jogadores</div>
- <div class="card-body">
+ </div> -->
  
-   
-    
-     <table class="table dataTable" id="dataTable">
-       <thead>
-         <th rowspan="1" colspan="1">Nome</th>
-         <th rowspan="1" colspan="1">E-Mail</th>
-         <th>Ações</th>
-       </thead>
-       <tbody>
-	#{list items:usuarios, as:'usuario'}
-		<tr role="row">
-           <td>${usuario.nome}</td>
-           <td>${usuario.email}</td>
-           <td>
-           	
-           	</td>
-         </tr>
-	#{/list}
-	</tbody>
-    </table>
-  </div>
-</div>
+ 
+ 
+ <div class="card card-register mx-auto mt-5">
+ <meta charset="UTF-8"/>
+  <div class="card-header">
+    <i class="fa fa-table"></i> Jogadores</div>
+  <div class="card-body">
+  
+     
+      <table class="table dataTable" id="dataTable">
+        <thead>
+          <th rowspan="1" colspan="1">Nome</th>
+          <th rowspan="1" colspan="1">E-Mail</th>
+         
 
-	<div class="row">
-		<div class="form-group col-md-3">
-			<a href="@{Usuarios.Cadastrousuario}" class="btn btn-success btn-block">Novo Cliente</a>
+          <th>Ações</th>
+        </thead>
+        <tbody>
+ 	#{list items:usuarios, as:'usuario'}
+ 		<tr role="row">
+            <td>${usuario.nome}</td>
+            <td>${usuario.email}</td>
+           
+            <td>
+            		
+            	</td>
+          </tr>
+ 	#{/list}
+ 	</tbody>
+     </table>
+     <div class="row">
+		<div class="form-group col-md-5">
+		    <!-- Botao para convidar para Jogar-->
+			<a href="#" class="btn btn-success btn-block">Novo Jogador</a>
 		</div>
 
-		<div class="form-group col-md-3">
+		<div class="form-group col-md-4">
 			<a href="@{Application.index}" class="btn btn-danger btn-block">Sair</a>
 		</div>
 	</div>
-	-->
+
+   </div>
+ </div>
+
+ 	
+
+
+

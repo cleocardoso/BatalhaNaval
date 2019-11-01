@@ -61,10 +61,23 @@ public class Usuarios extends Controller{
 		cadastrousuario(usuario);
 	}
 	
+	
 	public static void dados(Usuario usuario){
 		long id = new Long(session.get("idUsuarioLogado"));
 		usuario = Usuario.findById(id);
 		render(usuario);
+	}
+	
+	public static void editar(@Valid Usuario usuario, String confirmaSenha){
+		System.out.println(validation.hasErrors());
+		if(validation.hasErrors()){
+			validation.keep();
+			params.flash();
+			dados(usuario);
+		}
+		usuario.save();
+		flash.success("Dados atualizados com Sucesso!");
+		renderTemplate("Application/index.html", usuario);
 	}
 	
 	
@@ -85,18 +98,14 @@ public class Usuarios extends Controller{
 			
 			flash.success("Uma nova Senha foi enviada para seu Email");
 			Logins.login();
-			
-			
+						
 		}
 		
 	}
 	
-	public static void listagem(Usuario usuario){
-		List<Usuario> usaurios = Usuario.findAll();
+	public static void detalhes(Usuario usuario){
 		render(usuario);
 	}
-	
-	
 	
 	
 	
