@@ -34,7 +34,7 @@ public class Logins extends Controller{
 		if(usuario == null){
 			flash.error("Por favor, entre com usuário e senha corretos");
 			login();
-		}else if(login.equals("jogador@123") && senha.equals("jogador")){
+		}else if(login.equals("admin@123") && senha.equals("123")){
 			session.put("idUsuarioLogado", usuario.id);
 			
 			IniciaJogo iniciajogo = new IniciaJogo();
@@ -58,15 +58,15 @@ public class Logins extends Controller{
 		login();
 	}
 	
-	/*public static void logoutAdministrador(){
-		long id = new Long(session.get("idInicioJogo"));
+	public static void logoutAdministrador(){
+		/*long id = new Long(session.get("idInicioJogo"));
 		IniciaJogo iniciaJogo = IniciaJogo.findById(id);
 		iniciaJogo.finalJogo = new Date();
 		
 		iniciaJogo.save();
 		
 		session.clear();
-		System.out.println("logout");
+		System.out.println("logout");*/
 		login();
-	}*/
+	}
 }
