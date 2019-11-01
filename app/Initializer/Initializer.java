@@ -37,16 +37,9 @@ public class Initializer extends Job{
 			conta1.dateAtual = new Date();
 			conta1.save();
 			
-			usuario2.conta = conta;
+			usuario2.conta = conta1;
 			usuario2.save();
-			
-			
-			
-			
-			
-			
-			
-			
+
 			
 		}
 	}

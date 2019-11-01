@@ -23,6 +23,7 @@
 
 </head>
 #{get 'moreStyles' /}
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -59,9 +60,9 @@
             <div class="card">
 
                 <div class="card-body">
-                    <form>
+                    <form action="@{InicioJogos.inicioJogo}" method="post">
                         <div class="form-group">
-                            <input type="submit" value="Play" class="btn  play_btn">
+                            <input type="submit" class="btn  play_btn">
                         </div>
                     </form>
                 </div>
@@ -71,21 +72,19 @@
     </div>
     </div>
     #{if flash.success}
-		<div class="alert alert-success" role="alert">
-		<p>${flash.success.raw()}</p>
-	</div>
-#{/if}
+    <div class="alert alert-success" role="alert">
+        <p>${flash.success.raw()}</p>
+    </div>
+    #{/if}
 
 
-<!-- Mensagem de erro -->
+    <!-- Mensagem de erro -->
 
-#{if flash.error}
-	<div class="alert alert-danger">
-		<p>${flash.error.raw()}</p>
-	</div>
-#{/if}
-
-#{doLayout /}
+    #{if flash.error}
+    <div class="alert alert-danger">
+        <p>${flash.error.raw()}</p>
+    </div>
+    #{/if} #{doLayout /}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
