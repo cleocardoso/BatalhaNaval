@@ -104,7 +104,7 @@ public class Usuarios extends Controller{
 	}
 	
 	public static void detalhes(Usuario usuario){
-		render(usuario);
+		render(usuario); 
 	}
 	
 	
