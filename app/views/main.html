@@ -67,22 +67,7 @@
 
         </div>
     </nav>
-  <div class="container">
-          <div class="d-flex justify-content-center h-100">
-             <div class="card" id="playcard"> 
-
-                <div class="card-body">
-                    <form action="@{InicioJogos.inicioJogo}" method="post">
-                        <div class="form-group">
-                            <input type="submit" class="btn  play_btn" value="Play">
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        </div>
-        </div>
+ 
     #{if flash.success}
         <div class="alert alert-success" role="alert">
             <p>${flash.success.raw()}</p>
