@@ -64,7 +64,7 @@ public class Usuarios extends Controller{
 			
 		}
 		cadastrousuario(usuario);
-		 Result r;
+		 //Result r;
 	      //b  if(!bd.insert(usuario)){
 	        //    r = new Result("Erro. Usuário não inserido");
 	            
@@ -72,7 +72,8 @@ public class Usuarios extends Controller{
 	       //     r = new Result("200");
 	      //  }
 	        
-	        renderJSON(g.toJson(r));
+	       // renderJSON(g.toJson(r));
+		
 	}
 	
 	
@@ -121,7 +122,7 @@ public class Usuarios extends Controller{
 		render(usuario); 
 	}
 	
-<<<<<<< HEAD
+
 	public static void fotoUsuario(Long id){
 		Usuario usuario = Usuario.findById(id);
 		notFoundIfNull(usuario);
@@ -129,8 +130,5 @@ public class Usuarios extends Controller{
 		renderBinary(usuario.foto.get());
 	}
 	
-	
-	
-=======
->>>>>>> 7cd094089a9b5bbffb5b69fecd4285e19bda9b09
+
 }
