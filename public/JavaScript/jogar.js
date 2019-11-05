@@ -38,8 +38,8 @@ var shiptypes = [
     ["Porta-avioes", 5, 1]
 ];
 
-var gridx = 16,
-    gridy = 16;
+var gridx = 10,
+    gridy = 10;
 var player = [],
     computer = [],
     playersships = [],
@@ -146,9 +146,9 @@ function showGrid(ispc) {
     for (y = 0; y < gridy; ++y) {
         for (x = 0; x < gridx; ++x) {
             if (ispc)
-                document.write('<a href="javascript:gridClick(' + y + ',' + x + ');"><img name="pc' + y + '_' + x + '" src="public/images/001.jpg" width=30 height=30></a>');
+                document.write('<a href="javascript:gridClick(' + y + ',' + x + ');"><img name="pc' + y + '_' + x + '" src="public/images/001.jpg" width=50 height=50></a>');
             else
-                document.write('<a href="javascript:void(0);"><img name="ply' + y + '_' + x + '" src="batt' + player[y][x][0] + '.gif" width=30 height=30></a>');
+                document.write('<a href="javascript:void(0);"><img name="ply' + y + '_' + x + '" src="public/images/batt' + player[y][x][0] + '.gif" width=50 height=50></a>');
         }
         document.write('<br>');
     }

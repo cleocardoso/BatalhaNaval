@@ -8,8 +8,15 @@ import models.Usuario;
 import play.mvc.Controller;
 
 public class Logins extends Controller{
-
+ 
 	public static void login(){
+		/*String url = "https://acounts.google.com/o/oauth2/v2/auth?"
+				+ "client_id=900436149089-fs27mm4sad3n16bbvlqt0n43mo3lje4k.apps.googleusercontent.com"
+				+ "&response_type=code&"
+				+ "scope=openid%20email%20profile&"
+				+ "redirect_uri=http://localhost:9000/Logins/perfil&state=&";
+				render(url)
+				*/
 		render();
 	}
 	
