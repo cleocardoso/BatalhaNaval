@@ -46,11 +46,11 @@
                 </li>
 
             </ul>
-            
-              <!--<li class="nav-item">
+
+            <!--<li class="nav-item">
                 <a class="nav-link" href="#">Jogadores</a>
             </li>-->
-           
+
             <!--<li> <a class="nav-item" href="#">Jogadores</a>
             <ul class="sidenav-second-level collapse" id="collapseComponents1">
              <li><a href="#">Lista de Jogadores</a></li>
@@ -67,24 +67,39 @@
 
         </div>
     </nav>
-   
+  <div class="container">
+          <div class="d-flex justify-content-center h-100">
+             <div class="card" id="playcard"> 
+
+                <div class="card-body">
+                    <form action="@{InicioJogos.inicioJogo}" method="post">
+                        <div class="form-group">
+                            <input type="submit" class="btn  play_btn" value="Play">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
     #{if flash.success}
-    <div class="alert alert-success" role="alert">
-        <p>${flash.success.raw()}</p>
-    </div>
-    #{/if}
+        <div class="alert alert-success" role="alert">
+            <p>${flash.success.raw()}</p>
+        </div>
+        #{/if}
 
 
-    <!-- Mensagem de erro -->
+        <!-- Mensagem de erro -->
 
-    #{if flash.error}
-    <div class="alert alert-danger">
-        <p>${flash.error.raw()}</p>
-    </div>
-    #{/if} #{doLayout /}
+        #{if flash.error}
+        <div class="alert alert-danger">
+            <p>${flash.error.raw()}</p>
+        </div>
+        #{/if} #{doLayout /}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
 </body>
 
 #{get 'moreScripts'/}

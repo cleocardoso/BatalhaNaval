@@ -9,6 +9,9 @@ import java.util.List;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
+import com.google.gson.Gson;
+import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
+
 import models.Conta;
 import models.Usuario;
 
@@ -18,7 +21,10 @@ import play.libs.Crypto;
 import play.libs.Mail;
 import play.mvc.Controller;
 
+
+
 public class Usuarios extends Controller{
+	private static final Gson g = new Gson();
 		
 	public static void cadastrousuario(Usuario usuario){
 		render(usuario);
@@ -58,6 +64,15 @@ public class Usuarios extends Controller{
 			
 		}
 		cadastrousuario(usuario);
+		 Result r;
+	      //b  if(!bd.insert(usuario)){
+	        //    r = new Result("Erro. Usuário não inserido");
+	            
+	       // }else{
+	       //     r = new Result("200");
+	      //  }
+	        
+	        renderJSON(g.toJson(r));
 	}
 	
 	
@@ -103,9 +118,10 @@ public class Usuarios extends Controller{
 	}
 	
 	public static void detalhes(Usuario usuario){
-		render(usuario);
+		render(usuario); 
 	}
 	
+<<<<<<< HEAD
 	public static void fotoUsuario(Long id){
 		Usuario usuario = Usuario.findById(id);
 		notFoundIfNull(usuario);
@@ -115,4 +131,6 @@ public class Usuarios extends Controller{
 	
 	
 	
+=======
+>>>>>>> 7cd094089a9b5bbffb5b69fecd4285e19bda9b09
 }
