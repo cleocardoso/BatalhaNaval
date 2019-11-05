@@ -7,6 +7,10 @@ import models.Usuario;
 import play.mvc.Controller;
 
 public class Contas extends Controller{
+	
+	public static void pontuacao(){
+		render();
+	}
 
 	public static void DetalhesConta(Conta conta){
 		long id = new Long (session.get("idUsuarioLogado"));

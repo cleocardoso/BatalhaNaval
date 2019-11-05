@@ -18,7 +18,7 @@ body {
 }
 
 .card {
-    height: 370px;
+    height: 400px;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -115,3 +115,22 @@ input:focus {
 .text {
     color: black;
 }
+
+#c1{
+    color:white;
+    
+
+
+}
+
+#card{
+
+height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;   
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+

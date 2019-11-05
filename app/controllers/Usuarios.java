@@ -41,7 +41,6 @@ public class Usuarios extends Controller{
 				usuario.save();
 				
 				Conta conta = new Conta();
-				conta.id_usuario = (usuario.id.intValue() +1);
 				conta .save();
 				
 				usuario.conta = conta;
@@ -62,7 +61,7 @@ public class Usuarios extends Controller{
 	}
 	
 	
-	public static void dados(Usuario usuario){
+	public static void atualizardados(Usuario usuario){
 		long id = new Long(session.get("idUsuarioLogado"));
 		usuario = Usuario.findById(id);
 		render(usuario);
@@ -73,7 +72,7 @@ public class Usuarios extends Controller{
 		if(validation.hasErrors()){
 			validation.keep();
 			params.flash();
-			dados(usuario);
+			atualizardados(usuario);
 		}
 		usuario.save();
 		flash.success("Dados atualizados com Sucesso!");
@@ -107,6 +106,12 @@ public class Usuarios extends Controller{
 		render(usuario);
 	}
 	
+	public static void fotoUsuario(Long id){
+		Usuario usuario = Usuario.findById(id);
+		notFoundIfNull(usuario);
+		response.setContentTypeIfNotSet(usuario.foto.type());
+		renderBinary(usuario.foto.get());
+	}
 	
 	
 	

@@ -20,7 +20,7 @@ public class Initializer extends Job{
 			
 			Conta conta = new Conta();
 			conta.pontuacao = 0;
-			conta.dateAtual = new Date();
+			conta.dataJogo = new Date();
 			conta.save();
 			
 			usuario1.conta = conta;
@@ -34,7 +34,7 @@ public class Initializer extends Job{
 			
 			Conta conta1 = new Conta();
 			conta1.pontuacao = 0;
-			conta1.dateAtual = new Date();
+			conta1.dataJogo = new Date();
 			conta1.save();
 			
 			usuario2.conta = conta1;

@@ -15,15 +15,15 @@ import play.db.jpa.Model;
 public class Conta  extends Model{
 	
 	
-	public int pontuacao;
+	public int pontuacao;	
 	
-	public String nomeUsuario;
+	public int tiroAgua;
 	
-	public Integer id_usuario;
+	public int totBarcosAfundados;
 	
 
 	@Temporal(TemporalType.DATE)
-	public Date dateAtual;
+	public Date dataJogo;
 	
 	@OneToOne(mappedBy = "conta")
 	public Usuario usuario;
@@ -31,6 +31,6 @@ public class Conta  extends Model{
 	
 		
 	public String toString(){
-		return "\njogador.id"+id+"\njogador.pontuacao"+pontuacao+"\njogador.id_usuario"+id_usuario;
+		return "\njogador.id"+id+"\njogador.pontuacao"+pontuacao+"\njogador.tiroAgua"+tiroAgua+"\njogador.totBarcosAfundados"+totBarcosAfundados;
 	}
 }
