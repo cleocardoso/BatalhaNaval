@@ -26,7 +26,7 @@ public class Usuario extends Model{
 	@Required
 	public String senha;
 	
-	public Blob foto;
+	//public Blob foto;
 	
 		
 	@OneToOne

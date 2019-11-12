@@ -37,28 +37,30 @@
                 <li class="nav-item">
                     <a class="nav-link" href="home">Jogar <span class="sr-only">(página atual)</span></a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <li class="nav-item" data-toggle="collapse" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" href="#">Pontuação</a>
                 </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <li class="nav-item" data-toggle="collapse" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" href="#">Jogadores</a>
                 </li>
-
-            </ul>
-
-            <!--<li class="nav-item">
-                <a class="nav-link" href="#">Jogadores</a>
-            </li>-->
-
-            <!--<li> <a class="nav-item" href="#">Jogadores</a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents1">
-             <li><a href="#">Lista de Jogadores</a></li>
-             <li><a href="#">Exemplo</a></li>
-            </ul>
+              
+                 <div class="dropdown">
+                   <button type="button" class="btn btn-default dropdown-toglle">
+                   Jogadores <div class="caret"></div>
+                   </button>
+                   
+                   <ul class="dropdown-menu">
+                     <li><a href="#">Listar Jogadores</a></li>
+                     <li><a>Buscra Jogadores</a></li>
+                    </ul>                 
+                 </div>
+            </div>
             
-            </li>-->
+                
 
+            </ul>  		
+                    
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right">
                     <a class="nav-link " href="@{Logins.login}"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
