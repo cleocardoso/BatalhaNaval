@@ -3,6 +3,9 @@ package controllers;
 
 import java.util.Date;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 import java.util.List;
 
@@ -10,7 +13,8 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
 import com.google.gson.Gson;
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
+import com.google.gson.JsonElement;
+
 
 import models.Conta;
 import models.Usuario;
@@ -19,21 +23,37 @@ import models.Usuario;
 import play.data.validation.Valid;
 import play.libs.Crypto;
 import play.libs.Mail;
+import play.libs.WS;
+import play.libs.WS.HttpResponse;
 import play.mvc.Controller;
 
 
 
 public class Usuarios extends Controller{
-	private static final Gson g = new Gson();
-		
+	
 	public static void cadastrousuario(Usuario usuario){
 		render(usuario);
+		
 	}
+	
+	
 	
 	public static void recuperaSenha(String Email){
 		render(Email);
 	}
 	
+	//consumido pelo cliente
+	public static void salvarUsuario(String nome, String email, String senha){
+		Usuario u = new Usuario();
+		Conta conta = new Conta();
+		conta .save();
+		u.nome=nome;
+		u.email=email;
+		u.senha=senha;		
+		u.conta = conta;
+		u.save();			
+		ok();
+	}
 	
 	public static void salvar(@Valid Usuario usuario, String confirmarSenha){
 		if(usuario.isUnico()){
@@ -45,6 +65,8 @@ public class Usuarios extends Controller{
 				}
 				
 				usuario.save();
+				
+				
 				
 				Conta conta = new Conta();
 				conta .save();
@@ -64,16 +86,8 @@ public class Usuarios extends Controller{
 			
 		}
 		cadastrousuario(usuario);
-		 //Result r;
-	      //b  if(!bd.insert(usuario)){
-	        //    r = new Result("Erro. Usuário não inserido");
-	            
-	       // }else{
-	       //     r = new Result("200");
-	      //  }
-	        
-	       // renderJSON(g.toJson(r));
-		
+		ok();
+		 	
 	}
 	
 	
@@ -122,13 +136,13 @@ public class Usuarios extends Controller{
 		render(usuario); 
 	}
 	
-
-	public static void fotoUsuario(Long id){
-		Usuario usuario = Usuario.findById(id);
-		notFoundIfNull(usuario);
-		response.setContentTypeIfNotSet(usuario.foto.type());
-		renderBinary(usuario.foto.get());
-	}
 	
 
+	
+	
+    
+    
 }
+	
+
+
